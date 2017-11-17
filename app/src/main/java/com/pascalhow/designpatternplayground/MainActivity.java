@@ -14,7 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.pascalhow.designpatternplayground.mainfragment.MainFragment;
+import com.pascalhow.designpatternplayground.command.CommandFragment;
 import com.pascalhow.designpatternplayground.newfragment.NewFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        loadFragment(new MainFragment(), FRAGMENT_MAIN);
+        loadFragment(new CommandFragment(), FRAGMENT_MAIN);
     }
 
     /**
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity
                         .add(R.id.base_fragment, fragment, tag)
                         .addToBackStack(FRAGMENT_NEW)
                         .commitAllowingStateLoss();
+                break;
             default:
                 break;
         }
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity
     private void updateFragmentTitle(Fragment fragment) {
         String fragClassName = fragment.getClass().getName();
 
-        if (fragClassName.equals(MainFragment.class.getName())) {
+        if (fragClassName.equals(CommandFragment.class.getName())) {
             setTitle(getResources().getString(R.string.main_screen_fragment_title));
             showFloatingActionButton();
         } else if (fragClassName.equals(NewFragment.class.getName())) {
@@ -154,7 +155,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            loadFragment(new MainFragment(), FRAGMENT_MAIN);
+            loadFragment(new CommandFragment(), FRAGMENT_MAIN);
         } else if (id == R.id.nav_gallery) {
             loadFragment(new NewFragment(), FRAGMENT_NEW);
         } else if (id == R.id.nav_slideshow) {
