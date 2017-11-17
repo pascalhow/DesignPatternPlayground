@@ -1,4 +1,4 @@
-package com.pascalhow.navigationdrawerbaseapp.mainfragment;
+package com.pascalhow.designpatternplayground.mainfragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,9 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.pascalhow.navigationdrawerbaseapp.MainActivity;
-import com.pascalhow.navigationdrawerbaseapp.R;
-import com.pascalhow.navigationdrawerbaseapp.R2;
+import com.pascalhow.designpatternplayground.MainActivity;
+import com.pascalhow.designpatternplayground.R;
+import com.pascalhow.designpatternplayground.R2;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

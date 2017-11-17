@@ -1,4 +1,4 @@
-package com.pascalhow.navigationdrawerbaseapp;
+package com.pascalhow.designpatternplayground;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,8 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.pascalhow.navigationdrawerbaseapp.mainfragment.MainFragment;
-import com.pascalhow.navigationdrawerbaseapp.newfragment.NewFragment;
+import com.pascalhow.designpatternplayground.mainfragment.MainFragment;
+import com.pascalhow.designpatternplayground.newfragment.NewFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

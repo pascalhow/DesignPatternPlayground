@@ -1,4 +1,4 @@
-package com.pascalhow.navigationdrawerbaseapp.newfragment;
+package com.pascalhow.designpatternplayground.newfragment;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.pascalhow.navigationdrawerbaseapp.MainActivity;
-import com.pascalhow.navigationdrawerbaseapp.R;
+import com.pascalhow.designpatternplayground.MainActivity;
+import com.pascalhow.designpatternplayground.R;
 
 import butterknife.ButterKnife;
 

@@ -1,4 +1,4 @@
-package com.pascalhow.navigationdrawerbaseapp;
+package com.pascalhow.designpatternplayground;
 
 import org.junit.Test;
 
