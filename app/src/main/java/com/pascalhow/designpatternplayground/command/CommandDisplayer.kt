@@ -6,7 +6,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.pascalhow.designpatternplayground.R
 
-class CommandDisplayer (rootView: View) {
+class CommandDisplayer(rootView: View) {
 
     @BindView(R.id.main_text) lateinit var mainText: TextView
 
@@ -15,7 +15,7 @@ class CommandDisplayer (rootView: View) {
     }
 
     fun display() {
-        mainText.text="Hello"
+        mainText.setText(R.string.command_screen_main_text)
     }
 
 }

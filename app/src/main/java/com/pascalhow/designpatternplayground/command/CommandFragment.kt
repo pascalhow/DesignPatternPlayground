@@ -2,22 +2,19 @@ package com.pascalhow.designpatternplayground.command
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import android.view.*
-import com.pascalhow.designpatternplayground.MainActivity
 import com.pascalhow.designpatternplayground.R
 
 class CommandFragment : Fragment() {
 
-    private lateinit var mainActivity: MainActivity
     private lateinit var commandPresenter: CommandPresenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
-        mainActivity = activity as MainActivity
-        mainActivity.setTitle(R.string.main_screen_fragment_title)
-        mainActivity.showFloatingActionButton()
+        (activity as AppCompatActivity).supportActionBar?.title = "Command Pattern"
 
         val commandDisplayer = CommandDisplayer(rootView)
         commandPresenter = CommandPresenter(commandDisplayer)
@@ -51,7 +48,7 @@ class CommandFragment : Fragment() {
             }
             else -> {
             }
-        }//  Save new trip
+        }
         return super.onOptionsItemSelected(item)
     }
 }
