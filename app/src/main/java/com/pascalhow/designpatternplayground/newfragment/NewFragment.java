@@ -1,7 +1,8 @@
 package com.pascalhow.designpatternplayground.newfragment;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -9,18 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.pascalhow.designpatternplayground.MainActivity;
 import com.pascalhow.designpatternplayground.R;
 
 import butterknife.ButterKnife;
 
-/**
- * Created by pascal on 26/12/2016.
- */
 
 public class NewFragment extends Fragment {
 
-    private MainActivity mainActivity;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,10 +24,7 @@ public class NewFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_new, container, false);
 
         ButterKnife.bind(this, rootView);
-
-        mainActivity = (MainActivity) getActivity();
-        mainActivity.setTitle(R.string.new_screen_fragment_title);
-        mainActivity.hideFloatingActionButton();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("New Fragment");
 
         setHasOptionsMenu(true);
 

@@ -30,21 +30,21 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
         setOnBackStackListener();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         loadFragment(new CommandFragment(), FRAGMENT_MAIN);
@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Replaces or adds a new fragment on top of the current fragment
+     *
      * @param fragment The new fragment
-     * @param tag A tag relating to the new fragment
+     * @param tag      A tag relating to the new fragment
      */
     public void loadFragment(Fragment fragment, String tag) {
 
@@ -103,22 +104,21 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Handle screen display when navigating between fragment
+     *
      * @param fragment The current fragment
      */
     private void updateFragmentTitle(Fragment fragment) {
-        String fragClassName = fragment.getClass().getName();
-
-        if (fragClassName.equals(CommandFragment.class.getName())) {
-            setTitle(getResources().getString(R.string.main_screen_fragment_title));
+        if (fragment instanceof CommandFragment) {
+            setTitle(getResources().getString(R.string.command_screen_title));
             showFloatingActionButton();
-        } else if (fragClassName.equals(NewFragment.class.getName())) {
+        } else if (fragment instanceof NewFragment) {
             setTitle(getResources().getString(R.string.new_screen_fragment_title));
         }
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -159,16 +159,16 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             loadFragment(new NewFragment(), FRAGMENT_NEW);
         } else if (id == R.id.nav_slideshow) {
-
+            //  no-op
         } else if (id == R.id.nav_manage) {
-
+            //  no-op
         } else if (id == R.id.nav_share) {
-
+            //  no-op
         } else if (id == R.id.nav_send) {
-
+            //  no-op
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
