@@ -1,8 +1,14 @@
 
+?squid:S00108")Either remove or fill this block of code.(õœšÿ
+?squid:S00108")Either remove or fill this block of code.(ó´®
+Dsquid:S00108")Either remove or fill this block of code.(Õó³÷úÿÿÿÿ
+hsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ù ®Íúÿÿÿÿ
+<squid:S1872"'Use an "instanceof" comparison instead.(ùÊ‰ı
 Dsquid:S00108")Either remove or fill this block of code.(ê±›Ñüÿÿÿÿ
 <squid:S1872"'Use an "instanceof" comparison instead.(ŸÎ²Â
-<squid:S1872"'Use an "instanceof" comparison instead.(ùÊ‰ı
-Dsquid:S00108")Either remove or fill this block of code.(Õó³÷úÿÿÿÿ
-hsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(ù ®Íúÿÿÿÿ
-?squid:S00108")Either remove or fill this block of code.(ó´®
-?squid:S00108")Either remove or fill this block of code.(õœšÿ
+Ksquid:S1905"*Remove this unnecessary cast to "Toolbar".(ªü–ıÿÿÿÿ8Ú¥òÒü+
+Ssquid:S1905"7Remove this unnecessary cast to "FloatingActionButton".(ÆÒˆ¹8Ú¥òÒü+
+Psquid:S1905"/Remove this unnecessary cast to "DrawerLayout".(ĞÍè¨şÿÿÿÿ8Ú¥òÒü+
+Rsquid:S1905"1Remove this unnecessary cast to "NavigationView".(üûÍøÿÿÿÿ8Ú¥òÒü+
+Psquid:S1905"/Remove this unnecessary cast to "DrawerLayout".(ĞÍè¨şÿÿÿÿ8Ú¥òÒü+
+Psquid:S1905"/Remove this unnecessary cast to "DrawerLayout".(ĞÍè¨şÿÿÿÿ8Ú¥òÒü+
