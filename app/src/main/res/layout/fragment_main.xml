@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/command_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/frame_layout_margin"
     android:orientation="vertical">
+
+    <Button
+        android:id="@+id/turn_on_appliance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/command_screen_main_turn_on_button_text" />
+
+    <Button
+        android:id="@+id/turn_off_appliance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/command_screen_main_turn_off_button_text" />
+
+    <Button
+        android:id="@+id/operate_appliance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/command_screen_main_operate_button_text" />
 
     <TextView
         android:id="@+id/main_text"

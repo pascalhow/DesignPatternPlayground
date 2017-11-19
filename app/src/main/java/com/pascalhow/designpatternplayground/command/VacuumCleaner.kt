@@ -12,7 +12,7 @@ class VacuumCleaner(private val logger: Logger): ElectricalAppliance {
         logger.d("Vacuum cleaner turned OFF")
     }
 
-    override fun doAction() {
+    override fun operate() {
         logger.d("Vacuum cleaner VACUUMING!")
     }
 

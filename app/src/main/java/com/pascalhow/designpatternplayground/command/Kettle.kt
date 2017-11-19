@@ -12,7 +12,7 @@ class Kettle(private val logger: Logger) : ElectricalAppliance {
         logger.d("Kettle turning OFF")
     }
 
-    override fun doAction() {
+    override fun operate() {
         logger.d("Kettle BOILING WATER!")
     }
 

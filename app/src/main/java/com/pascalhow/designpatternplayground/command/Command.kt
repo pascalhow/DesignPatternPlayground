@@ -20,10 +20,10 @@ class TurnOff(private val electricalAppliance: ElectricalAppliance) : Command {
 
 }
 
-class DoAction(private val electricalAppliance: ElectricalAppliance) : Command {
+class Operate(private val electricalAppliance: ElectricalAppliance) : Command {
 
     override fun execute() {
-        electricalAppliance.doAction()
+        electricalAppliance.operate()
     }
 
 }

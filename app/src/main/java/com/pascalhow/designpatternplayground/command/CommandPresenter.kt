@@ -3,41 +3,62 @@ package com.pascalhow.designpatternplayground.command
 import com.pascalhow.designpatternplayground.logger.Logger
 
 class CommandPresenter(private val commandDisplayer: CommandDisplayer,
-                       private val electricalApplianceRunner: ElectricalApplianceRunner,
-                       private val logger: Logger) {
+                       logger: Logger) {
+
+    private val kettle = Kettle(logger)
+    private val vacuumCleaner = VacuumCleaner(logger)
+    private val washingMachine = WashineMachine(logger)
 
     fun startPresenting() {
         commandDisplayer.display()
+        prepareAppliances()
+    }
+
+    private fun prepareAppliances() {
+        commandDisplayer.setTurnOnClickListener(object : CommandDisplayer.OnApplianceClickEventHandler {
+            override fun handle() {
+                turnOnIOTAppliances()
+            }
+        })
+
+        commandDisplayer.setTurnOffClickListener(object : CommandDisplayer.OnApplianceClickEventHandler {
+            override fun handle() {
+                turnOffIOTAppliances()
+            }
+        })
+
+        commandDisplayer.setOperateClickListener(object : CommandDisplayer.OnApplianceClickEventHandler {
+            override fun handle() {
+                operateIOTAppliances()
+            }
+        })
     }
 
     fun turnOnIOTAppliances() {
-        val kettle = Kettle(logger)
-        val vacuumCleaner = VacuumCleaner(logger)
-        val washingMachine = WashineMachine(logger)
-        electricalApplianceRunner.prepare(TurnOn(kettle))
-        electricalApplianceRunner.prepare(TurnOn(vacuumCleaner))
-        electricalApplianceRunner.prepare(TurnOn(washingMachine))
-        electricalApplianceRunner.run()
+        val commandRunner = CommandRunner()
+        commandRunner.prepare(TurnOn(kettle))
+        commandRunner.prepare(TurnOn(vacuumCleaner))
+        commandRunner.prepare(TurnOn(washingMachine))
+        commandRunner.run()
     }
 
     fun turnOffIOTAppliances() {
-        val kettle = Kettle(logger)
-        val vacuumCleaner = VacuumCleaner(logger)
-        val washingMachine = WashineMachine(logger)
-        electricalApplianceRunner.prepare(TurnOff(kettle))
-        electricalApplianceRunner.prepare(TurnOff(vacuumCleaner))
-        electricalApplianceRunner.prepare(TurnOff(washingMachine))
-        electricalApplianceRunner.run()
+        val commandRunner = CommandRunner()
+        commandRunner.prepare(TurnOff(kettle))
+        commandRunner.prepare(TurnOff(vacuumCleaner))
+        commandRunner.prepare(TurnOff(washingMachine))
+        commandRunner.run()
     }
 
-    fun OperateIOTAppliances() {
-        val kettle = Kettle(logger)
-        val vacuumCleaner = VacuumCleaner(logger)
-        val washingMachine = WashineMachine(logger)
-        electricalApplianceRunner.prepare(DoAction(kettle))
-        electricalApplianceRunner.prepare(DoAction(vacuumCleaner))
-        electricalApplianceRunner.prepare(DoAction(washingMachine))
-        electricalApplianceRunner.run()
+    fun operateIOTAppliances() {
+        val commandRunner = CommandRunner()
+        commandRunner.prepare(Operate(kettle))
+        commandRunner.prepare(Operate(vacuumCleaner))
+        commandRunner.prepare(Operate(washingMachine))
+        commandRunner.run()
     }
 
+    fun stopPresenting() {
+        commandDisplayer.clearOnClickListener()
+    }
 }

@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.*
 import com.pascalhow.designpatternplayground.R
+import com.pascalhow.designpatternplayground.logger.TimberLogger
 
 class CommandFragment : Fragment() {
 
@@ -16,8 +17,12 @@ class CommandFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = "Command Pattern"
 
-        val commandDisplayer = CommandDisplayer(rootView)
-        commandPresenter = CommandPresenter(commandDisplayer)
+        val commandDisplayer = CommandDisplayer(rootView.findViewById(R.id.command_layout))
+        val logger = TimberLogger()
+
+        commandPresenter = CommandPresenter(
+                commandDisplayer,
+                logger)
 
         setHasOptionsMenu(true)
 
@@ -27,6 +32,11 @@ class CommandFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         commandPresenter.startPresenting()
+    }
+
+    override fun onPause() {
+        commandPresenter.stopPresenting()
+        super.onPause()
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {

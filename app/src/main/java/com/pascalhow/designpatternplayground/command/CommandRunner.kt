@@ -1,8 +1,8 @@
 package com.pascalhow.designpatternplayground.command
 
-class ElectricalApplianceRunner {
+class CommandRunner {
 
-    private lateinit var commandList: ArrayList<Command>
+    private val commandList: ArrayList<Command> = ArrayList()
 
     fun prepare(command: Command) {
         commandList.add(command)

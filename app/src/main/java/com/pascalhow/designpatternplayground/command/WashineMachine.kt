@@ -12,7 +12,7 @@ class WashineMachine(private val logger: Logger) : ElectricalAppliance {
         logger.d("Washing Machine turning OFF")
     }
 
-    override fun doAction() {
+    override fun operate() {
         logger.d("Washing Machine WASHING CLOTHES!")
     }
 
