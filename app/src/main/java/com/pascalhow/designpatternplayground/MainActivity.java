@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_command_pattern) {
             loadFragment(new CommandFragment(), FRAGMENT_MAIN);
         } else if (id == R.id.nav_gallery) {
             loadFragment(new NewFragment(), FRAGMENT_NEW);
