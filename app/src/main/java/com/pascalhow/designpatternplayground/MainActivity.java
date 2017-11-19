@@ -17,12 +17,14 @@ import android.view.MenuItem;
 import com.pascalhow.designpatternplayground.command.CommandFragment;
 import com.pascalhow.designpatternplayground.newfragment.NewFragment;
 
+import timber.log.Timber;
+import timber.log.Timber.DebugTree;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String FRAGMENT_MAIN = "main";
     private static final String FRAGMENT_NEW = "new";
-
 
     FloatingActionButton fab;
 
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Timber.plant(new DebugTree());
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -154,7 +158,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_command_pattern) {
             loadFragment(new CommandFragment(), FRAGMENT_MAIN);
         } else if (id == R.id.nav_gallery) {
             loadFragment(new NewFragment(), FRAGMENT_NEW);

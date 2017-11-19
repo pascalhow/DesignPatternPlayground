@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NavigationDrawerBaseApp</string>
+    <string name="app_name">Design Pattern Playground</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -8,6 +8,9 @@
 
     <string name="command_screen_title">Command Pattern</string>
     <string name="command_screen_main_text">Badabing</string>
+    <string name="command_screen_main_turn_on_button_text">Turn On</string>
+    <string name="command_screen_main_turn_off_button_text">Turn Off</string>
+    <string name="command_screen_main_operate_button_text">Action</string>
 
     <string name="new_screen_fragment_title">New Fragment</string>
     <string name="new_screen_hello_text">Hello new fragment</string>
